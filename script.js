@@ -14,11 +14,11 @@ const perguntas = [
                 afirmacao: "No início ficou com medo do que essa tecnologia pode fazer. "
             },
             {
-                texto: "Socias"
+                texto: "Socias",
                 afirmacao: "Quis saber como usar IA no seu dia a dia."
             },
             {
-                texto: "Política "
+                texto: "Política ",
                 afirmacao: "Quis saber como usar IA no seu dia a dia."
             },
         ],   
@@ -27,7 +27,7 @@ const perguntas = [
         enunciado: "O programa auxílio Brasil criado em 2023, é um progroma de transferência de renda que reuniu outros auxílios existentes. Atualmente, o valor médio recebido por família e de R$ 600,00. É correto afirmar que o programa tem qual objetivo?",
         alternativas: [
             {
-                texto:"Reduzir ás taxas de mortalidade intantil"
+                texto:"Reduzir ás taxas de mortalidade intantil",
                 afirmacao: " Ao reduzir a taxa, estiver se o risco de um nascido. Vivo morrer antes de chegar a um ano de vida"
             },
             {
@@ -67,4 +67,4 @@ function mostraPergunta() {
     mostraAlternativas();
 }
 
-function mostraAlternativas(){
+function mostraAlternativas();
