@@ -1,14 +1,13 @@
 caixaPrincipal = document.querySelector(".caixa-principal");
 const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
-const caixaRconstesultado = document.querySelector(".caixa-resultado");
+const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
-
     {
-        enunciado: "Para o sociólogo Marx Weber,os conflitos sociais seriam resultados das posições assimétricas que os indivíduos ocupam na sociedade.Ela chamou de close, estamento e partido as diferentes esferas. Quais são essas opções?",
-        alternativas: [ 
+      enunciado: "Para o sociologo Max Weber, os conflitos socias seriam resultados das posiçoes assimetricos que os individuos ocupam na sociedades.Ela chamou de close,estamento e partido ás diferentes esferas.Quais essas opçoes vocẽs conhecem?",
+        alternativas: [
             {
                 texto: "Econômica !",
                 afirmacao: "No início ficou com medo do que essa tecnologia pode fazer. "
@@ -20,8 +19,8 @@ const perguntas = [
             {
                 texto: "Política ",
                 afirmacao: "Quis saber como usar IA no seu dia a dia."
-            },
-        ],   
+            }
+        ]
     },
     {
         enunciado: "O programa auxílio Brasil criado em 2023, é um progroma de transferência de renda que reuniu outros auxílios existentes. Atualmente, o valor médio recebido por família e de R$ 600,00. É correto afirmar que o programa tem qual objetivo?",
@@ -67,4 +66,26 @@ function mostraPergunta() {
     mostraAlternativas();
 }
 
-function mostraAlternativas();
+function mostraAlternativas(){
+    for(const alternativa of perguntaAtual.alternativas) {
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativas);
+    }
+}
+
+function respostaSelecionada(opcaoSelecionada) {
+    const afirmacoes = opcaoSelecionada.afirmacao;
+    historiaFinal += afirmacoes + " ";
+    atual++;
+    mostraPergunta();
+}
+
+function mostraResultado() {
+    caixaPerguntas.textContent = "Em 2049...";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = "";
+}
+
+mostraPergunta();
